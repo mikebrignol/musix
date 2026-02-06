@@ -1,0 +1,40 @@
+:root {
+  --bg: #121212;
+  --primary: #1db954;
+  --text: #ffffff;
+  --muted: #b3b3b3;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header, footer {
+  padding: 1rem 2rem;
+  background: #181818;
+}
+
+main {
+  padding: 2rem;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
