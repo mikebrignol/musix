@@ -1,10 +1,9 @@
 export function trackCard(track) {
     return `
     <div class="track-card">
-      <img src="${track.image}" />
-      <h3>${track.title}</h3>
-      <p>${track.artist}</p>
-      <button>Preview</button>
+      <img src="${track.artworkUrl100}" alt="${track.trackName}" />
+      <p>${track.trackName}</p>
+      <small>${track.artistName}</small>
     </div>
   `;    
 }

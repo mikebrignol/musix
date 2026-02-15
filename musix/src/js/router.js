@@ -1,3 +1,10 @@
+import {renderSearchPage} from '../pages/search.js';
+
+const routes = {
+    '/search': renderSearchPage
+};
+
+
 export function navigate(page) {
     const app = document.querySelector('#app');
 
@@ -11,6 +18,7 @@ export function navigate(page) {
 
     if (page === 'search') {
         app.innerHTML = `<h1>Search</h1>`;
+        renderSearchPage(app);
     }
 
     if (page === 'favorites') {
