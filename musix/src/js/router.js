@@ -1,19 +1,24 @@
 import {renderSearchPage} from '../pages/search.js';
+import { renderFavorites } from '../pages/favorites.js';
+import { renderHomePage } from '../pages/home.js';
+import { renderGenre } from '../pages/genre.js';
 
-const routes = {
-    '/search': renderSearchPage
-};
 
 
 export function navigate(page) {
     const app = document.querySelector('#app');
+    const hash = window.location.hash.slice(2);
+
+    const segments = hash.split('/');
+
+    const param = segments[1];
 
     if (page === 'home') {
-        app.innerHTML = `<h1>Home</h1>`;
+        renderHomePage(app);
     }
 
     if (page === 'genres') {
-        app.innerHTML = `<h1>Genres</h1>`;
+        renderGenre(app, param);
     }
 
     if (page === 'search') {
@@ -24,4 +29,9 @@ export function navigate(page) {
     if (page === 'favorites') {
         app.innerHTML = `<h1>Favorites</h1>`;
     }
+
+    if (page === 'favorites') {
+        renderFavorites(app);
+    }
+
 }
