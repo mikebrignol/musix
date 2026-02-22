@@ -1,6 +1,11 @@
 import { getTracksByGenre } from "../services/lastfm";
 
 export async function renderGenre(container, genreName) {
+    if (!genreName) {
+        window.location.hash = '#/genre/rock';
+        return;
+    };
+
     container.innerHTML = `
     <h1>Browse by genre</h1>
 
@@ -14,11 +19,6 @@ export async function renderGenre(container, genreName) {
         <p>${genreName} Loading...</p>
     </div>
     `;
-
-    if (!genreName) {
-        window.location.hash = '#/genre/rock';
-        return;
-    };
     
 
     const list = container.querySelector("#genre-results");

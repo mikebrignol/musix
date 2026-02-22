@@ -110,12 +110,14 @@ main {
   color: var(--muted);
 }
 
-#trending {
+#trending, #genre-results, #favorites-list {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.5rem;
 }
+
+
 
 /* 📱 Mobile adjustments */
 @media (max-width: 600px) {
