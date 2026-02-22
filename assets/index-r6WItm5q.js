@@ -33,7 +33,7 @@
     <h1>Expand your taste in Music</h1>
     <p>Browse what's trending right now.</p>
     <div id="trending"></div>
-    `;const t=["pop","hip hop","afrobeats","electronics"],n=t[Math.floor(Math.random()*t.length)],a=e.querySelector("#trending"),r=await l(n);a.innerHTML=r.slice(0,8).map(s=>u(s)).join("")}const y="8eb7608f4dd24c8fc29553cdc2321acd",L="https://ws.audioscrobbler.com/2.0/";async function b(e){const t=`${L}?method=tag.gettoptracks&tag=${e}&api_key=${y}&format=json&limit=20`;try{const n=await fetch(t);if(!n.ok)throw new Error("Failed to fetch genre tracks");const a=await n.json();return!a.tracks||!a.tracks.track?[]:a.tracks.track}catch(n){console.error("Laast.fm did not respond",n)}}async function S(e,t){if(e.innerHTML=`
+    `;const t=["pop","hip hop","afrobeats","electronics"],n=t[Math.floor(Math.random()*t.length)],a=e.querySelector("#trending"),r=await l(n);a.innerHTML=r.slice(0,8).map(s=>u(s)).join("")}const y="8eb7608f4dd24c8fc29553cdc2321acd",L="https://ws.audioscrobbler.com/2.0/";async function b(e){const t=`${L}?method=tag.gettoptracks&tag=${e}&api_key=${y}&format=json&limit=20`;try{const n=await fetch(t);if(!n.ok)throw new Error("Failed to fetch genre tracks");const a=await n.json();return!a.tracks||!a.tracks.track?[]:a.tracks.track}catch(n){console.error("Laast.fm did not respond",n)}}async function S(e,t){if(!t){window.location.hash="#/genre/rock";return}e.innerHTML=`
     <h1>Browse by genre</h1>
 
     <nav class="genre-nav">
@@ -45,7 +45,7 @@
     <div id="genre-results">
         <p>${t} Loading...</p>
     </div>
-    `,!t){window.location.hash="#/genre/rock";return}const n=e.querySelector("#genre-results");try{const a=await b(t);if(!a.length){n.innerHTML="<p>No tracks found.</p>";return}n.innerHTML=a.map(r=>`
+    `;const n=e.querySelector("#genre-results");try{const a=await b(t);if(!a.length){n.innerHTML="<p>No tracks found.</p>";return}n.innerHTML=a.map(r=>`
         <div class="track-card">
           <img src="${r.image?.[2]?.["#text"]||""}" alt="${r.name}" />
           <p>${r.name}</p>
